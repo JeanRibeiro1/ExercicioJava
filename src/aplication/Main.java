@@ -19,7 +19,7 @@ public class Main {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-		SimpleDateFormat sdf2 = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+		
 		
 		
 		
@@ -48,16 +48,12 @@ public class Main {
 			OrderItem orderItem = new OrderItem(quantity, productPrice, new Product(productName,productPrice));
 			order.addItem(orderItem);
 		}
+		System.out.println();
 		
-		System.out.println("Order Summary: ");
-		System.out.println("Order moment: "+sdf2.format(order.getMoment()));
-		System.out.println("Order status: "+order.getStatus());
-		System.out.println("Client: "+order.getClient().getName()+" ("+sdf.format(order.getClient().getBirthDate())+") - "+order.getClient().getEmail());
-		System.out.println("Order items:");
 		System.out.println(order);
 		
 		
-		System.out.println("Total price: "+String.format("%.2f", order.total()));
+		
 		sc.close();
 
 	}
